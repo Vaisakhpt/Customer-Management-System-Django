@@ -1,0 +1,6 @@
+<form method="POST">
+    {% csrf_token %}
+    <p>are you sure to delete {{ order.customer.name }}</p>
+    <input type="submit" value="yes">
+    <input type="submit" value="No" onclick="window.location.href='/'">
+</form>

@@ -1,0 +1,11 @@
+<h3>Products</h3>
+
+<table border="3" cellpadding="7">
+        {% for p in product %}
+        <tr>
+            <td>{{ p.product_name }}</td>
+            <td>{{ p.price }}</td>
+            <td>{{ p.category }}</td>
+        </tr>
+        {% endfor %}
+</table>

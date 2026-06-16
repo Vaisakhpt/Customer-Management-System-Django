@@ -1,0 +1,12 @@
+<h3>Customer profile</h3>
+<p>Name:{{ customer.name }}</p>
+<h3>Orders:</h3>
+
+<table border="1" cellpadding="5">
+        {% for o in orderr %}
+        <tr>
+            <th>{{ o.product.product_name }}</th>
+            <th>{{ o.status }}</th>
+        </tr>  
+        {% endfor %}
+</table>

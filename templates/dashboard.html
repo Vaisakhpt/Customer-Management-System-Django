@@ -1,0 +1,38 @@
+<h2>Dashboard</h2>
+<h3>Total customers: {{countc}}</h3>
+<h3>Total Orders: {{counto}}</h3>
+<br>
+<h3>Recent Orders</h3>
+<hr style="border:1px dashed black">
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Customer</th>
+        <th>Product</th>
+        <th>Status</th>
+        <th>update</th>
+        <th>delete</th>
+    </tr>
+        {% for order in orderr %}
+            <tr>
+                <td>{{ order.customer.name }}</td>
+                <td>{{ order.product.product_name }}</td>
+                <td>{{ order.status }}</td>
+                <td><a href="{% url 'updateorder' order.id %}">Update</a></td>
+                <td><a href="{% url 'deleteorder' order.id %}">Delete</a></td>
+            </tr>
+        {% endfor %}
+
+</table>
+
+<br>
+
+<h3>Customers</h3>
+<hr style="border:1px dashed black">
+<table border="1" cellpadding="5">
+    {% for customer in customerr %}
+        <tr>
+            <td>{{customer.name}}</td>
+        </tr>
+    {% endfor %}
+
+</table>
