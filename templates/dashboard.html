@@ -2,6 +2,18 @@
 <h3>Total customers: {{countc}}</h3>
 <h3>Total Orders: {{counto}}</h3>
 <br>
+{% if request.user.is_authenticated %}
+    {{ request.user }}
+{% else %}
+    User not logged in
+{% endif %}
+
+<form method="POST" action="{% url 'logout' %}">
+{% csrf_token %}
+<input type="submit" value="logout">
+</form>
+
+<br>
 <h3>Recent Orders</h3>
 <hr style="border:1px dashed black">
 <table border="1" cellpadding="5">

@@ -1,0 +1,28 @@
+<style>
+    .loginbox{
+        text-align:center;
+        margin:250px;
+    }
+    input{
+        margin-bottom:15px;
+    }
+
+</style>
+<div class="loginbox">
+    <form method="POST">
+        {% csrf_token %}
+        <label>Username:</label>
+        <input type="text" name="username">
+        <br>
+        <label>Password:</label>
+        <input type="password" name="password">
+        <br>
+        <input type="submit" name="submit">
+        <br>
+        {% if request.user.is_authenticated %}
+            {{ request.user }}
+        {% else %}
+            User not logged in
+        {% endif %}
+    </form>
+</div>

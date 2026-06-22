@@ -1,5 +1,4 @@
-<h3>Customer profile</h3>
-<p>Name:{{ customer.name }}</p>
+<p>welcome {{ customer.name }}</p>
 <form method="POST" action="{% url 'logout' %}">
 {% csrf_token %}
 <input type="submit" value="logout">
